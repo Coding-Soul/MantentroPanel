@@ -1,9 +1,9 @@
 from server_type import ServerType
 
-server_types : ServerType = []
 
-Pycord = ServerType()
-Pycord.name = 'Pycord'
-Pycord.config = {}
+server_types = []
 
-print(Pycord)
+pycord = ServerType.__init__(name='Pycord', configuration='')
+server_types.append(pycord)
+
+print(server_types)
