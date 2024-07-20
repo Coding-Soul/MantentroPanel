@@ -1,6 +1,6 @@
 import sqlite3
 
-PATH = 'user.db'
+PATH = 'users.db'
 
 
 # to set the database up
