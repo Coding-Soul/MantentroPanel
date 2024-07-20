@@ -1,7 +1,7 @@
 from flask import Flask
 from src.ServerManager import servers
 
-app = Flask(__name__)
+app = Flask(__name__) # Creating flask instance
 
 
 # Home Directory
@@ -16,6 +16,7 @@ def server_types():
     return str(servers.manager.list_server_names())
 
 
+# Start function
 def start(port: int, host: str, debug: bool):
-    print('Starting api on ' + host + ':' + str(port) + ' with debugging ' + str(debug))
-    app.run(port=port, debug=debug)
+    print('Starting api on ' + host + ':' + str(port) + ' with debugging ' + str(debug)) # logging
+    app.run(port=port, debug=debug) # running app
