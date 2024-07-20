@@ -8,5 +8,9 @@ def home():
     return 'Flask is working!'
 
 
-if __name__ == '__main__':
-    app.run(port=1337)
+@app.route('/')
+def 
+
+
+def start(port: int, host: str, debug: bool):
+    app.run(port=port, debug=debug)
