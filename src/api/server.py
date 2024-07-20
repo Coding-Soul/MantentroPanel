@@ -4,6 +4,7 @@ from src.ServerManager import servers
 app = Flask(__name__)
 
 
+# Home Directory
 @app.route('/')
 def home():
     return 'Flask is running'
