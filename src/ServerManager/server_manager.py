@@ -1,4 +1,4 @@
-from ServerType import ServerType
+from server_type import ServerType
 
 
 class ServerManager:
