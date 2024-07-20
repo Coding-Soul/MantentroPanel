@@ -4,8 +4,9 @@ PATH = 'user.db'
 
 
 # to set the database up
-def create_db(self):
-    conn = sqlite3.connect(self.path)
+def create_db():
+    print('Creating database...')
+    conn = sqlite3.connect(PATH)
     cursor = conn.cursor()
 
     # Creating table
@@ -19,3 +20,7 @@ def create_db(self):
 
     conn.commit()
     conn.close()
+    print('Database connection closed!')
+
+
+create_db()
