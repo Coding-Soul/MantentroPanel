@@ -8,8 +8,8 @@ def home():
     return 'Flask is working!'
 
 
-@app.route('/')
-def 
+@app.route('/api/server/types')
+def
 
 
 def start(port: int, host: str, debug: bool):
