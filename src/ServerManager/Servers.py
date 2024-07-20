@@ -1,9 +1,8 @@
-from server_type import ServerType
+from src.ServerManager.server_manager import ServerManager
+from src.ServerManager.server_type import ServerType
 
+manager = ServerManager()
 
-server_types = []
+manager.add_server('Pycord', {})
 
-pycord = ServerType.__init__(name='Pycord', configuration='')
-server_types.append(pycord)
-
-print(server_types)
+print(manager.list_server_names())
