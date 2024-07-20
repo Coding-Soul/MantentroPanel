@@ -1,7 +1,6 @@
 from flask import Flask
 from src.ServerManager import servers
 
-
 app = Flask(__name__)
 
 
@@ -10,6 +9,7 @@ def home():
     return 'Flask is running'
 
 
+# List of all server types
 @app.route('/api/server/types')
 def server_types():
     return str(servers.manager.list_server_names())
