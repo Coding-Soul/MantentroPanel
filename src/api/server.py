@@ -1,5 +1,5 @@
 from flask import Flask
-from ..ServerManager import servers
+from src.ServerManager import servers
 
 
 app = Flask(__name__)
@@ -12,7 +12,7 @@ def home():
 
 @app.route('/api/server/types')
 def server_types():
-    return str(servers.server_types)
+    return str(servers.manager.list_server_names())
 
 
 def start(port: int, host: str, debug: bool):
