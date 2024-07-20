@@ -5,7 +5,7 @@ class ServerManager:
     def __init__(self):
         self.servers = []
 
-    def add_server(self, name: str, configuration:dict):
+    def add_server_type(self, name: str, configuration:dict):
         server = ServerType(name=name, configuration=configuration)
         self.servers.append(server)
 
