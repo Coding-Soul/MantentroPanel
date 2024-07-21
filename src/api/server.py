@@ -1,13 +1,10 @@
 from flask import Flask
 from src.ServerManager import servers
 
+# Route imports
+from src.api.routes.home import home_bp
+
 app = Flask(__name__)  # Creating flask instance
-
-
-# Home Directory
-@app.route('/')
-def home():
-    return 'Flask is running'
 
 
 # Route for the list of all server types
@@ -20,6 +17,9 @@ def server_types():
 @app.route('/api/server/create')
 def create_server():
     return 'test'
+
+
+app.register_blueprint(home_bp)
 
 
 # Start function
