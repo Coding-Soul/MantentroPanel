@@ -3,6 +3,7 @@ from flask import Flask
 # Route imports
 from src.api.routes.home import home_bp
 from src.api.routes.servers import servers_bp
+from src.api.routes.users import users_bp
 
 
 app = Flask(__name__)  # Creating flask instance
@@ -11,6 +12,7 @@ app = Flask(__name__)  # Creating flask instance
 # Routes register
 app.register_blueprint(home_bp)
 app.register_blueprint(servers_bp)
+app.register_blueprint(users_bp)
 
 
 # Start function
