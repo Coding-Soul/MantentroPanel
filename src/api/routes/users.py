@@ -18,7 +18,7 @@ def user_create():
 
 
 # User list
-@users_bp.route('/api/user/list')
+@users_bp.route('/api/user/list', methods=['GET'])
 def user_list():
     output = list_users()
     return f"User-List: {output}"
