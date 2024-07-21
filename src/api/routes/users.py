@@ -12,8 +12,8 @@ def user_create():
         email = request.form['email']
         password = request.form['password']
 
-        create_user(username=username, email=email, password=password)
-        return 'idk'
+        rs = create_user(username=username, email=email, password=password)
+        return rs
 
 
 # User list
