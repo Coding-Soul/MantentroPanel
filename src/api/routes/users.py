@@ -1,6 +1,5 @@
 from flask import Blueprint, request
-from src.user.database import create_user as create_user
-from src.user.database import list_users
+from src.user.database import create_user as create_user, list_users, delete_user
 
 users_bp = Blueprint('users', __name__)
 
@@ -22,3 +21,12 @@ def user_create():
 def user_list():
     output = list_users()
     return f"User-List: {output}"
+
+
+# User delete
+@users_bp.route('/api/user/delete', methods=['POST'])
+def user_delete():
+    if request.method == 'POST':
+        user_id = request.form['id']
+        rs = delete_user(user_id) # Getting result & delete the user
+        return rs # returning
