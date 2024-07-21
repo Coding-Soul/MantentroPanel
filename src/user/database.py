@@ -28,12 +28,8 @@ def list_users():
     users = cursor.fetchall()
 
     output = ""
-
-    print('Test')
     for user in users:
-        print(f"Users: ID: {user[0]}, Username: {user[1]}, Email: {user[2]}")
         output += f"\nID: {user[0]}, Username: {user[1]}, Email: {user[2]}"
 
     conn.close()
-
-
+    return output
