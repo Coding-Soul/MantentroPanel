@@ -1,25 +1,16 @@
 from flask import Flask
-from src.ServerManager import servers
 
 # Route imports
 from src.api.routes.home import home_bp
+from src.api.routes.servers import servers_bp
+
 
 app = Flask(__name__)  # Creating flask instance
 
 
-# Route for the list of all server types
-@app.route('/api/server/types')
-def server_types():
-    return str(servers.manager.list_server_names())
-
-
-# Route for creating a new server
-@app.route('/api/server/create')
-def create_server():
-    return 'test'
-
-
+# Routes register
 app.register_blueprint(home_bp)
+app.register_blueprint(servers_bp)
 
 
 # Start function
