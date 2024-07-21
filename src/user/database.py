@@ -1,4 +1,5 @@
 import sqlite3
+import argon2
 
 PATH = 'Z:/Coding/Projekte/Coding Soul/MantentroPanel/src/user/users.db'
 
@@ -23,6 +24,21 @@ def create_user(username: str, email: str, password: str):
         conn.close()
         return result
 
+
+def hash_password(password):
+    ph = argon2.PasswordHasher()
+    return ph.hash(password)
+
+
+def verify_password(stored_password, entered_password):
+    ph = argon2.PasswordHasher()
+
+    try:
+        ph.verify(stored_password, entered_password)
+        return True
+
+    except argon2.exceptions.VerifyMismatchError:
+        return False
 
 # User list
 def list_users():
