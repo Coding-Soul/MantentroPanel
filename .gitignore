@@ -8,3 +8,4 @@ src/user.db
 src/user/user.db-journal
 src/user/user.db
 *.db
+/src/api/routes/__pycache__
