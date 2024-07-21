@@ -21,6 +21,7 @@ def create_user(username: str, email: str, password: str):
         result = {'status': 'error', 'message': f'Error while creating user.'}
     finally:
         conn.close()
+        return result
 
 
 # User list
