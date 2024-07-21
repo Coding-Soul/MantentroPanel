@@ -1,9 +1,9 @@
 import sqlite3
 
-PATH = 'users.db'
+PATH = 'Z:/Coding/Projekte/Coding Soul/MantentroPanel/src/user/users.db'
 
 
-def create_user(username, email, password):
+def create_user(username: str, email: str, password: str):
     conn = sqlite3.connect(PATH)
     cursor = conn.cursor()
 
@@ -11,13 +11,29 @@ def create_user(username, email, password):
         cursor.execute('''
             INSERT INTO users (username, email, password)
             VALUES (?,?,?)
-        
         ''', (username, email, password))
         conn.commit()
         print(username + " was successfully created!")
-        return 0
     except sqlite3.IntegrityError:
         print('Error: Username must be unique')
-        return 1
     finally:
         conn.close()
+
+
+def list_users():
+    conn = sqlite3.connect(PATH)
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT id, username, email FROM users')
+    users = cursor.fetchall()
+
+    output = ""
+
+    print('Test')
+    for user in users:
+        print(f"Users: ID: {user[0]}, Username: {user[1]}, Email: {user[2]}")
+        output += f"\nID: {user[0]}, Username: {user[1]}, Email: {user[2]}"
+
+    conn.close()
+
+
