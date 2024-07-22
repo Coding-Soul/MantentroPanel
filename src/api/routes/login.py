@@ -6,7 +6,7 @@ import os
 login_bp = Blueprint('login', __name__)
 
 
-# Route for the list of all server types
+# Route for login
 @login_bp.route('/login', methods=['POST', 'GET'])
 def server_types():
     if request.method == 'POST':
@@ -23,5 +23,4 @@ def server_types():
                 </form>
             
             '''
-
 
