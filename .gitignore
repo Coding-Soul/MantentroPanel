@@ -6,3 +6,4 @@ src/user.db
 src/user/user.db-journal
 src/user/user.db
 *.db
+*.json
