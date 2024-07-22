@@ -13,7 +13,7 @@ def create_user(username: str, email: str, password: str):
         cursor.execute('''
             INSERT INTO users (username, email, password)
             VALUES (?,?,?)
-        ''', (username, email, password))
+        ''', (username, email, hash_password(password)))
         conn.commit()
         print(username + " was successfully created!")
         result = {'status': 'success', 'message': f'User created: {username}'}
