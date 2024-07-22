@@ -1,2 +1,4 @@
 Flask~=3.0.3
 argon2-cffi
+
+MarkupSafe~=2.1.5
