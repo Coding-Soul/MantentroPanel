@@ -28,5 +28,5 @@ def user_list():
 def user_delete():
     if request.method == 'POST':
         user_id = request.form['id']
-        rs = delete_user(user_id) # Getting result & delete the user
-        return rs # returning
+        rs = delete_user(user_id)  # Getting result & delete the user
+        return rs  # returning
