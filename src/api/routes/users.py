@@ -20,7 +20,7 @@ def user_create():
 @users_bp.route('/api/user/list', methods=['GET'])
 def user_list():
     output = list_users()
-    return f"User-List: {output}"
+    return output
 
 
 # User delete
