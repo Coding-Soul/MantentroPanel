@@ -40,20 +40,24 @@ def verify_password(stored_password, entered_password):
     except argon2.exceptions.VerifyMismatchError:
         return False
 
+
 # User list
 def list_users():
     conn = sqlite3.connect(PATH)
     cursor = conn.cursor()
 
-    cursor.execute('SELECT id, username, email FROM users')
+    cursor.execute('SELECT id, username, email, password FROM users')
     users = cursor.fetchall()
 
-    output = ""
+    output = {}
+
     for user in users:
-        output += f"\nID: {user[0]}, Username: {user[1]}, Email: {user[2]}"
+        output[user[0]] = {user[1]: [user[3]]}
 
     conn.close()
+    print(output)
     return output
+
 
 
 # Deleting user function
